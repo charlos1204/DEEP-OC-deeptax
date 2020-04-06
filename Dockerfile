@@ -12,7 +12,7 @@
 # input args are defined inside the Jenkinsfile, not here!
 #
 
-ARG tag=gpu
+ARG tag=1.14.0-gpu-py3
 
 # Base image, e.g. tensorflow/tensorflow:1.14.0-py3
 FROM tensorflow/tensorflow:${tag}
@@ -25,7 +25,7 @@ LABEL version='1.0.0'
 ARG branch=master
 
 # If to install JupyterLab
-ARG jlab=false
+ARG jlab=true
 
 # Install ubuntu updates and python related stuff
 # link python3 to python, pip3 to pip, if needed
@@ -33,6 +33,7 @@ ARG jlab=false
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y --no-install-recommends \
          git \
+	     nano \
          curl \
          wget \
          python3-setuptools \
