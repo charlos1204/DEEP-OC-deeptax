@@ -1,0 +1,38 @@
+{
+    "title": "deeptax",
+    "summary": "Deep learning taxonomic classification",
+    "description": [
+		"This is deeptax application using DEEPaaS API",
+           "",
+           "**References**\n",
+           ""
+	],
+    "keywords": [
+        "docker",
+        "api-v2"
+    ],
+    "license": "MIT",
+    "date_creation": "2020-04-06",
+    "sources": {
+		"dockerfile_repo": "https://github.com/charlos1204/DEEP-OC-deeptax",
+		"docker_registry_repo": "charlos1204/deep-oc-deeptax",
+		"code": "https://github.com/charlos1204/deeptax"
+	},
+    "continuous_integration": {
+        "build_status_badge": "https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/DEEP-OC-deeptax/master",
+        "build_status_url": "https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/DEEP-OC-deeptax/job/master"
+    },
+    "tosca": [
+        {
+            "title": "Mesos (CPU)",
+            "url": "https://raw.githubusercontent.com/indigo-dc/tosca-templates/master/deep-oc/deep-oc-marathon-webdav.yml",
+            "inputs": [
+                "rclone_conf",
+                "rclone_url",
+                "rclone_vendor",
+                "rclone_user",
+                "rclone_pass"
+            ]
+        }
+    ]
+}
